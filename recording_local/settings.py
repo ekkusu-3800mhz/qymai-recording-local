@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -122,3 +123,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Recording Options
+
+OBS_WS_HOST          = os.environ.get('OBS_WS_HOST', 'localhost')
+OBS_WS_PORT          = os.environ.get('OBS_WS_PORT', '4455')
+OBS_WS_PASSWORD      = os.environ.get('OBS_WS_PASSWORD', '')
+OBS_WS_TIMEOUT       = os.environ.get('OBS_WS_TIMEOUT', '30')
+
+VIDEO_BUFFERING_TIME = os.environ.get('VIDEO_BUFFERING_TIME', '5')

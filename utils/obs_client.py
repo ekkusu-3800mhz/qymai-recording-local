@@ -1,14 +1,6 @@
 import obsws_python as obsws
 from typing import Dict
-import os
-
-
-# 加载 OBS-Websocket 服务器配置
-
-OBS_WS_HOST     = os.environ.get('OBS_WS_HOST', 'localhost')
-OBS_WS_PORT     = os.environ.get('OBS_WS_PORT', '4455')
-OBS_WS_PASSWORD = os.environ.get('OBS_WS_PASSWORD', '')
-OBS_WS_TIMEOUT  = os.environ.get('OBS_WS_TIMEOUT', '30')
+from recording_local.settings import OBS_WS_HOST, OBS_WS_PASSWORD, OBS_WS_PORT, OBS_WS_TIMEOUT
 
 
 class OBSClient():
