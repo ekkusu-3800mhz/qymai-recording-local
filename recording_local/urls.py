@@ -16,8 +16,14 @@ Including another URLconf
 """
 
 from django.urls import path
+from webapi.views import record_control as views
+from typing import List
 
 
-urlpatterns = [
-    
+urlpatterns: List = [
+    path('env', views.CheckEnvView.as_view()),
+    path('record/disk_check', views.CheckDiskView.as_view()),
+    path('record/set_scene', views.SelectSceneView.as_view()),
+    path('record/start', views.StartRecordView.as_view()),
+    path('record/stop', views.StopRecordView.as_view()),
 ]
